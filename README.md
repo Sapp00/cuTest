@@ -1,1 +1,1 @@
-# CUDA_TEST
+# cuTest - the cutest CUDA Testing Framework
