@@ -5,5 +5,5 @@ Name: cutest
 Description: cuTest (without main() function)
 Version: @PROJECT_VERSION@
 URL: https://github.com/Sapp00/cuTest
-Libs: -L${libdir} -lcutest @CMAKE_THREAD_LIBS_INIT@
+Libs: -L${libdir} -lcutest
 Cflags: -I${includedir}

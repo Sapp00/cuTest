@@ -8,7 +8,6 @@ target_include_directories(cuTest_tests PRIVATE ../include)
 target_link_libraries(
         cuTest_tests
         cuTest
-        cuTest_main
 )
 
 target_compile_options(cuTest_tests PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:
