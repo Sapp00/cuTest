@@ -20,7 +20,7 @@ namespace cuTest{
             return "Test Exception";
         }
     };
-    static void throwError(std::string msg, std::string failure){
+    void throwError(std::string msg, std::string failure){
         COLOR_RED
         printf("Error: %s. %s\n", msg.c_str(), failure.c_str());
         COLOR_RESET

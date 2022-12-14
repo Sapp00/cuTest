@@ -4,3 +4,9 @@
 *.ptx
 *.cubin
 *.fatbin
+.git
+.idea
+.vs
+.vscode
+cmake-build-debug
+build

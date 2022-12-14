@@ -15,17 +15,17 @@ namespace cuTest {
     public:
         std::vector<TestCase> tests;
 
-        TestSuite(){}
+        TestSuite()= default;
 
-        TestSuite(std::string name) {
+        explicit TestSuite(std::string name) {
             this->name = name;
         }
 
-        const int execute() const {
+        int execute() const {
             COLOR_GREEN
             printf("[----------] ");
             COLOR_RESET
-            printf("Executing %d tests from %s\n", tests.size(), name.c_str());
+            printf("Executing %zu tests from %s\n", tests.size(), name.c_str());
             uint32_t err =  0;
             for(TestCase t : tests){
                 COLOR_GREEN
@@ -52,13 +52,13 @@ namespace cuTest {
                 COLOR_GREEN
                 printf("[----------] ");
                 COLOR_RESET
-                printf("Passed %d of %d tests from %s\n", tests.size(), tests.size(), name.c_str());
+                printf("Passed %zu of %zu tests from %s\n", tests.size(), tests.size(), name.c_str());
             }
             else{
                 COLOR_RED
                 printf("[----------] ");
                 COLOR_RESET
-                printf("Passed %d of %d tests from %s\n", tests.size()-err, tests.size(), name.c_str());
+                printf("Passed %zu of %zu tests from %s\n", tests.size()-err, tests.size(), name.c_str());
             }
             return err;
         }

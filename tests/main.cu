@@ -3,6 +3,8 @@
 //
 
 #include <cuTest_main.cuh>
+#include <string.h>
+#include <stdio.h>
 
 //__declspec(dllimport) int main(int argc, char **argv);
 
@@ -10,7 +12,8 @@ void cutest_test_a_b();
 void main2() {
     cuTest::addTest(std::string("a"), std::string("b"), &cutest_test_a_b);
 }
-    static void cutest_test_a_b(){
+
+void cutest_test_a_b(){
 
 }
 

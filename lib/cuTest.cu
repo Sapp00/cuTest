@@ -9,7 +9,7 @@ namespace cuTest{
 
     static uint32_t test_count = 0;
 
-    static bool addTest(std::string suite, std::string _case, void (*f)()){
+    bool addTest(std::string suite, std::string _case, void (*f)()){
         TestSuite s;
         if(tests.count(suite)){
             s = tests.at(suite);
@@ -27,12 +27,12 @@ namespace cuTest{
         return true;
     }
 
-    static void executeTests(){
+    void executeTests(){
 
         COLOR_GREEN
         printf("[==========] ");
         COLOR_RESET
-        printf("Executing %d tests from %d test suites\n", test_count, tests.size());
+        printf("Executing %d tests from %zu test suites\n", test_count, tests.size());
 
         uint32_t err_c = 0;
         uint32_t err_s = 0;
@@ -48,17 +48,17 @@ namespace cuTest{
         if(err_c == 0) {
             COLOR_GREEN
             printf("[==========] ");
-            printf("Executed %d tests from %d test suites\n", test_count, tests.size());
+            printf("Executed %d tests from %zu test suites\n", test_count, tests.size());
             printf("[  PASSED  ] ");
-            printf("%d/%d tests passed from %d/%d test suites\n", test_count, test_count, tests.size(), tests.size());
+            printf("%d/%d tests passed from %zu/%zu test suites\n", test_count, test_count, tests.size(), tests.size());
             COLOR_RESET
         }
         else{
             COLOR_RED
             printf("[==========] ");
-            printf("Executed %d tests from %d test suites\n", test_count, tests.size());
+            printf("Executed %d tests from %zu test suites\n", test_count, tests.size());
             printf("[  FAILED  ] ");
-            printf("%d/%d tests passed from %d/%d test suites\n", test_count-err_c, test_count, tests.size()-err_s, tests.size());
+            printf("%d/%d tests passed from %zu/%zu test suites\n", test_count-err_c, test_count, tests.size()-err_s, tests.size());
             COLOR_RESET
         }
     }
